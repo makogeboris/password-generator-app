@@ -1,0 +1,115 @@
+@tailwind base;
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind components;
+
+.slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  background: linear-gradient(
+    to right,
+    hsl(127, 100%, 82%) 0%,
+    hsl(127, 100%, 82%) calc((var(--value, 1) - 1) / 19 * 100%),
+    hsl(248, 15%, 11%) calc((var(--value, 1) - 1) / 19 * 100%),
+    hsl(248, 15%, 11%) 100%
+  );
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: hsl(252, 11%, 91%);
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb {
+  appearance: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: hsl(252, 11%, 91%);
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.slider::-ms-thumb {
+  appearance: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: hsl(252, 11%, 91%);
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background-color: hsl(248, 15%, 11%);
+  border: 1px solid hsl(127, 100%, 82%);
+}
+
+.slider::-moz-range-thumb:hover {
+  background-color: hsl(248, 15%, 11%);
+  border: 1px solid hsl(127, 100%, 82%);
+}
+
+.slider::-ms-thumb:hover {
+  background-color: hsl(248, 15%, 11%);
+  border: 1px solid hsl(127, 100%, 82%);
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: hsl(248, 10%, 15%);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.25em;
+  height: 1.25em;
+  border: 0.125em solid hsl(252, 11%, 91%);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.checkbox::before {
+  content: '';
+  width: 0.6875rem;
+  height: 0.6875rem;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em hsl(248, 15%, 11%);
+}
+
+.checkbox:checked {
+  background-color: hsl(127, 100%, 82%);
+  border: 0.125em solid hsl(127, 100%, 82%);
+}
+
+.checkbox:checked::before {
+  transform: scale(1);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox:hover {
+  border: 0.125em solid hsl(127, 100%, 82%);
+  cursor: poniter;
+}
+
+@tailwind utilities;
