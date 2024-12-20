@@ -1,9 +1,9 @@
 function Strength({ strength }) {
   const strengthColors = {
-    'Too Weak!': 'bg-red',
-    Weak: 'bg-orange',
-    Medium: 'bg-yellow',
-    Strong: 'bg-neonGreen',
+    'Too Weak!': { bg: 'bg-red', border: 'border-red' },
+    Weak: { bg: 'bg-orange', border: 'border-orange' },
+    Medium: { bg: 'bg-yellow', border: 'border-yellow' },
+    Strong: { bg: 'bg-neonGreen', border: 'border-neonGreen' },
   }
 
   const strengthBars = ['Too Weak!', 'Weak', 'Medium', 'Strong']
@@ -23,14 +23,19 @@ function Strength({ strength }) {
         <div className="flex gap-2">
           {Array(4)
             .fill('')
-            .map((_, index) => (
-              <div
-                key={index}
-                className={`h-7 w-[0.625rem] border-2 border-almostWhite ${
-                  index < activeBars ? strengthColors[strength] : ''
-                }`}
-              ></div>
-            ))}
+            .map((_, index) => {
+              const isActive = index < activeBars
+              return (
+                <div
+                  key={index}
+                  className={`h-7 w-[0.625rem] border-2 ${
+                    isActive
+                      ? `${strengthColors[strength].bg} ${strengthColors[strength].border}`
+                      : 'border-almostWhite'
+                  }`}
+                ></div>
+              )
+            })}
         </div>
       </div>
     </div>
