@@ -8,7 +8,7 @@ function Password({ password, showCopied, onCopy, onShowCopied }) {
         id="password"
         aria-label="Generated password"
         value={password}
-        disabled
+        readOnly
         placeholder="P4$5W0rD!"
       />
 
