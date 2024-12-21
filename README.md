@@ -7,8 +7,6 @@
   - [Screenshot](#screenshot)
   - [Links](#links)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
 - [Author](#author)
 
 ## Overview
@@ -29,16 +27,12 @@ Users should be able to:
 
 ### Links
 
-- [Live Site]()
+- [Live Site](https://password-generator-app-hazel.vercel.app/)
 
 ### Built with
 
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-
-### What I learned
-
-### Continued development
 
 ## Author
 
