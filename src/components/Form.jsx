@@ -68,7 +68,7 @@ function Form() {
 
   function handleSymbols() {
     setIsSymbol(!isSymbol)
-    setCharacters(`!@#$%^&*()_-+={}[]:;"'<>,.?/\\|~\``)
+    setCharacters('!@#$%^&*()+-={}[];<>:')
   }
 
   function handleShowCopied() {
@@ -84,7 +84,7 @@ function Form() {
     if (isUppercase) pool += 'QWERTYUIOPASDFGHJKLZXCVBNM'
     if (isLowercase) pool += 'qwertyuiopasdfghjklzxcvbnm'
     if (isNumber) pool += '1234567890'
-    if (isSymbol) pool += `!@#$%^&*()_-+={}[]:;"'<>,.?/\\|~\``
+    if (isSymbol) pool += '!@#$%^&*()+-={}[];<>:'
 
     setCharacters(pool)
   }, [isUppercase, isLowercase, isNumber, isSymbol])
